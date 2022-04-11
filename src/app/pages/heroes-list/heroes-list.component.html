@@ -1,0 +1,26 @@
+<div class="heroes-header">
+  <p class="heroes-header__title">Marvel's Heroes List</p>
+
+</div>
+<div class="heroes-subHeader">
+  <input class="filter__input" [(ngModel)]="filterValue" placeholder="Hero to search">
+  <button (click)="modifyHeroes()" class="heroes-header__modify">
+    {{ enableHeroEdit ? "STOP EDITNG" : "MODIFY" }}
+  </button>
+
+</div>
+
+<div *ngIf="!heroesToShow" class="heroes-header__emptyList" >
+  <p>
+    No heroes to show
+  </p>
+
+</div>
+<div class="heroes-list">
+  <app-hero
+    *ngFor="let hero of (heroes | filterHeroes: filterValue)"
+    [hero]="hero"
+    [enableHeroEdit]="enableHeroEdit"
+    (onDeleteHero)="deleteParentHero($event)"
+  ></app-hero>
+</div>

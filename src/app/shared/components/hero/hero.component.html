@@ -1,0 +1,31 @@
+
+<flip-card *ngIf="hero">
+  <flip-card-front>
+    <img class="hero__image" [src]="hero.img" />
+    <div class="hero__info">
+      <p class="hero__el">{{ hero.hero }}</p>
+      <div class="hero__buttons" *ngIf="enableHeroEdit">
+        <button class="hero__button hero__button--delete" (click)="deleteHero()">
+          DELETE
+        </button>
+        <button class="hero__button hero__button--edit" (click)="editHero()">
+          EDIT
+        </button>
+      </div>
+      <!-- Añadir botón para editar producto y función que navegue al formulario de edición con el id como param -->
+    </div>
+  </flip-card-front>
+  <flip-card-back>
+    <p class="hero__el--back--title">{{ hero.hero }}</p>
+    <p class="hero__el--back"><span>Real name: </span>{{ hero.name }}</p>
+    <p class="hero__el--back"><span>Rating: </span> {{ hero.rating }}⭐</p>
+    <div class="hero__buttons" *ngIf="enableHeroEdit">
+      <button class="hero__button hero__button--delete" (click)="deleteHero()">
+        DELETE
+      </button>
+      <button class="hero__button hero__button--edit" (click)="editHero()">
+        EDIT
+      </button>
+    </div>
+  </flip-card-back>
+</flip-card>

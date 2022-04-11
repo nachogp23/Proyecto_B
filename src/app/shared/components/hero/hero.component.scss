@@ -1,0 +1,112 @@
+.hero {
+  width: 200px;
+  margin-right: 24px;
+  border: 1px solid lightgrey;
+  box-shadow: 3px 3px 5px 5px rgb(114, 13, 13);
+  border-radius: 10%;
+  margin-bottom: 24px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  &__el {
+      margin-bottom: 8px;
+      //font-weight: bold;
+      font-size: 25px;
+      //text-align: center;
+      //align-self: center;
+      //justify-self: center;
+
+      &--back {
+        font-size: 20px;
+
+        span {
+          //text-decoration: underline;
+          color: rgb(3, 206, 3);
+
+        }
+
+        &--title {
+          font-size: 35px;
+        }
+      }
+  }
+
+  &__info {
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      //text-align: center;
+      justify-content: center;
+      //align-items: center;
+  }
+
+  &__image {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-bottom: 2px solid black;
+      border-radius: 10%;
+  }
+
+  &__color {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid rgb(85, 83, 83);
+  }
+
+  &__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+
+      //justify-content: space-around;
+  }
+
+  &__button {
+      color: white;
+      border: none;
+      border-radius: 3%;
+      padding: 4px;
+      font-weight: bold;
+      font-size: 15px;
+      margin: 2%;
+      margin-bottom: 13%;
+
+
+      &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+      }
+
+      &--edit {
+          background-color: rgb(71, 158, 71);
+
+      }
+
+      &--delete {
+          background-color: rgb(189, 35, 35);
+
+      }
+  }
+
+  &__more-info {
+      color: black;
+      font-weight: medium;
+      margin: 24px 0 8px 0;
+      display: block;
+
+      :hover {
+          text-decoration: underline;
+          font-weight: bold;
+      }
+  }
+
+}

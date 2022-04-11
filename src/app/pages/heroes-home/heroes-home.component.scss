@@ -1,0 +1,21 @@
+.home {
+  background-color: red;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  &__title {
+
+    font-size: 30px;
+
+  }
+
+  &__text {
+ font-size: 25px;
+
+  }
+}

@@ -1,0 +1,81 @@
+.heroes-header {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  //padding: 0 80px;
+  //margin: 40px 0 14px 0;
+  font-size: 24px;
+  //justify-content: center;
+  font-weight: medium;
+  //justify-items: center;
+  //background-color: black;
+
+  &__title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 40%;
+  }
+  &__modify {
+      border: none;
+      height: 40px;
+      width: auto;
+      font-family: sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+      background-color:rgb(49, 144, 234);
+      color: black;
+      //padding: ;
+      border-radius: 15px;
+      //text-decoration: underline;
+      cursor: pointer;
+      //align-self: flex-end;
+      //justify-self: flex-end;
+      //margin-left: 80%;
+
+      &:hover {
+          opacity: 0.7;
+          color: rgb(1, 0, 0);
+      }
+  }
+
+  &__emptyList{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+
+  }
+}
+
+.heroes-list {
+  display: flex;
+  //justify-content: flex-start;
+  justify-content: space-around;
+  //flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 34px;
+ // justify-content: center;
+  background-color: rgb(25, 25, 25);
+
+}
+
+.filter__input {
+  margin-bottom: 3%;
+  border: black, solid;
+  background-color: rgb(220, 113, 113);
+  width: 15%;
+  border-radius: 5%;
+  color: white;
+  font-size: 25px;
+}
+
+.heroes-subHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  //justify-content: center;
+}

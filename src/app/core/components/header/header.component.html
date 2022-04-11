@@ -1,0 +1,30 @@
+<div class="header">
+  <div [routerLink]="['']" class="header__Up">
+    <!-- <p class="header__Up__title">MARVEL'S HEROES</p> -->
+    <img class="header__Up__logo"
+      src="https://1000marcas.net/wp-content/uploads/2020/02/Marvel-Studios-Logo-2002.png"
+      alt="Marvel's Logo"
+    />
+  </div>
+
+  <div class="header__nav">
+    <a
+      [routerLink]="['/home']"
+      class="header__nav__link"
+      routerLinkActive="active-link"
+      >Home</a
+    >
+    <a
+      [routerLink]="['/heroes-list']"
+      class="header__nav__link"
+      routerLinkActive="active-link"
+      >Heroes</a
+    >
+    <a
+      [routerLink]="['/create-hero']"
+      class="header__nav__link"
+      routerLinkActive="active-link"
+      >Create New Heroe</a
+    >
+  </div>
+</div>

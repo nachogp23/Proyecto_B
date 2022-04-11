@@ -1,0 +1,79 @@
+<form
+  *ngIf="createHeroForm"
+  [formGroup]="createHeroForm"
+  (submit)="saveHero($event)"
+  class="form"
+>
+  <div class="field-container">
+    <input class="form_input" placeholder="Name" formControlName="name" />
+    <p
+      *ngIf="
+        !createHeroForm.get('name')?.valid && createHeroForm.get('name')?.dirty
+      "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+  </div>
+
+  <div class="field-container">
+    <input
+      class="form_input"
+      placeholder="Hero's Name"
+      formControlName="hero"
+    />
+    <p
+      *ngIf="
+        !createHeroForm.get('hero')?.valid && createHeroForm.get('hero')?.dirty
+      "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+  </div>
+
+  <div class="field-container">
+    <input
+      class="form_input"
+      placeholder="Hero's Rating"
+      formControlName="rating"
+    />
+    <p
+      *ngIf="!createHeroForm.get('rating')?.valid
+     && createHeroForm.get('rating')?.dirty
+     && createHeroForm.get('rating')?.errors?.['required'] "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+    <p
+      *ngIf="!createHeroForm.get('rating')?.valid
+            && createHeroForm.get('rating')?.dirty
+            && createHeroForm.get('rating')?.errors?.['maxlength']"
+      class="input-error"
+    >
+      This value exceeds the maximun price length
+    </p>
+  </div>
+
+
+  <div class="field-container">
+    <input
+      class="form_input"
+      placeholder="Hero's Image"
+      formControlName="img"
+    />
+    <p
+      *ngIf="
+        !createHeroForm.get('hero')?.valid && createHeroForm.get('img')?.dirty
+      "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+  </div>
+
+  <button class="form__button" type="submit" [disabled]="!createHeroForm.valid">
+    {{ hero ? "Edit" : "Create" }}
+  </button>
+</form>

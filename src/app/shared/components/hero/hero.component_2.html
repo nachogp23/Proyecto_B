@@ -1,0 +1,19 @@
+<div *ngIf="hero" class="hero">
+  <img class="hero__image" [src]="hero.img" />
+  <div class="product__info">
+    <p class="product__el">{{ hero.hero }}</p>
+
+
+    <!-- <p class="hero__el">Rating: {{ hero.rating }}</p> -->
+    <!-- <a class="hero__el hero__more-info" [routerLink]="['/heroes-list', product.id]">Show more info</a> -->
+    <div class="hero__buttons" *ngIf="enableHeroEdit">
+      <button class="hero__button hero__button--delete" (click)="deleteHero()">
+        DELETE
+      </button>
+      <button class="hero__button hero__button--edit" (click)="editHero()">
+        Edit
+      </button>
+    </div>
+    <!-- Añadir botón para editar producto y función que navegue al formulario de edición con el id como param -->
+  </div>
+</div>
