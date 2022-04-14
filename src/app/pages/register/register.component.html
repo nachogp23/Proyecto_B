@@ -1,0 +1,47 @@
+<div class="form container" *ngIf="signUpForm" >
+  <form [formGroup]="signUpForm"  (submit)="registerUser()">
+    <div>
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        placeholder="Enter your name"
+        required
+      >
+    </div>
+    <div>
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Enter your email address"
+        required
+      >
+    </div>
+    <div>
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Choose a password"
+        required
+      >
+    </div>
+    <div>
+      <label>Emoji</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="emoji"
+        placeholder="Choose one emoji"
+        required
+      >
+    </div>
+    <button type="submit"> Sign Up </button>
+  </form>
+
+
+</div>
