@@ -72,4 +72,8 @@ export class AuthService {
   return user ? JSON.parse(user)?.id : null;
   }
 
+  public getUserProfile(id: string): Observable<IUserSignUpResponse> {
+    return this.httpClient.get<IUserSignUpResponse>(`${environment.authApiUrl}/user-profile/${id}`);
+  }
+
 }

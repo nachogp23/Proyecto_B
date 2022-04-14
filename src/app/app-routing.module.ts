@@ -40,6 +40,11 @@ const routes: Routes = [
     loadChildren: () => import('src/app/pages/login/login.module').then(m => m.LoginModule)
   },
 
+  {
+    path: 'my-account/:id',
+    loadChildren: () => import('src/app/pages/my-account/my-account.module').then(m => m.MyAccountModule)
+  }
+
 
 
   // {
