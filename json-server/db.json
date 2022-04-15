@@ -19,15 +19,6 @@
       "rating": 5
     },
     {
-      "id": "4",
-      "hero": "Black Widow",
-      "name": "Natalia 'Natasha' Alianovna Romanova",
-      "link": "http://marvel.com/characters/6/black_widow",
-      "img": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/011blw_ons_crd_04.jpg",
-      "isActive": false,
-      "rating": 5
-    },
-    {
       "id": "5",
       "hero": "Doctor Strange",
       "name": "Stephen Strange",
@@ -60,6 +51,13 @@
       "rating": "1",
       "img": "https://www.notigatos.es/wp-content/uploads/2016/01/gatito-manx-anaranjado.jpg",
       "id": "Pc6xz9e"
+    },
+    {
+      "name": "Gato",
+      "hero": "Super-Gato",
+      "rating": "3",
+      "img": "No Image",
+      "id": "suBY17i"
     }
   ]
 }

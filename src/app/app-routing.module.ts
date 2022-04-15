@@ -1,7 +1,9 @@
+import { AuthUserGuard } from './core/guards/auth-user.guard';
+import { ExitValidationGuard } from './core/guards/exit-validation.guard'
 import { RegisterModule } from './pages/register/register.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 
 const routes: Routes = [
 
@@ -20,13 +22,12 @@ const routes: Routes = [
     loadChildren: () => import('src/app/pages/heroes-home/heroes-home.module').then(m => m.HeroesHomeModule),
 
   },
-
   {
     path: 'create-hero',
     loadChildren: () => import('src/app/pages/heroes-form/heroes-form.module').then(m => m.HeroesFormModule),
+    canDeactivate: [ExitValidationGuard]
 
   },
-
   {
     path: 'edit-form/:id',
     loadChildren: () => import('src/app/pages/edit-hero/edit-hero.module').then(m => m.EditHeroModule)
@@ -41,9 +42,10 @@ const routes: Routes = [
   },
 
   {
-    path: 'my-account/:id',
-    loadChildren: () => import('src/app/pages/my-account/my-account.module').then(m => m.MyAccountModule)
-  }
+    path: 'my-account',
+    loadChildren: () => import('src/app/pages/my-account/my-account.module').then(m => m.MyAccountModule),
+    canActivate: [AuthUserGuard]
+  },
 
 
 
@@ -57,6 +59,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    AuthUserGuard,
+    ExitValidationGuard,
+  ]
 })
 export class AppRoutingModule { }

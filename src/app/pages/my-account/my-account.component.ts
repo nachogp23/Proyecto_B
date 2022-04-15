@@ -2,6 +2,7 @@ import { AuthService } from './../../core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { IUser} from './../../core/services/models/user.model';
+//import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-my-account',
@@ -16,14 +17,20 @@ export class MyAccountComponent implements OnInit {
     private authService: AuthService,
     private route: ActivatedRoute
   ) {
-    this.route.params.subscribe(params => {
-      const id = params['id'];
-      if (id) {
-        this.authService.getUserProfile(id).subscribe(user => {
-          this.user = user.result;
-        });
-      }
-    })
+    // this.route.params.subscribe(params => {
+    //   const id = params['id'];
+    //   if (id) {
+    //     this.authService.getUserProfile(id).subscribe(user => {
+    //       this.user = user.result;
+    //     });
+    //   }
+    // })
+    const id = this.authService.getUserId();
+    console.log(id);
+    if (id) {
+      this.authService.getUserProfile(id).subscribe(user => console.log(user))
+    }
+
    }
 
   ngOnInit(): void {
@@ -31,6 +38,7 @@ export class MyAccountComponent implements OnInit {
 
   public logout() {
     this.authService.logout();
+    console.log("Saliendo...");
   }
 
 }

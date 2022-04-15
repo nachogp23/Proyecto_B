@@ -58,8 +58,16 @@ export class AuthService {
 
 
   get isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('access_token');
-    return authToken !== null;
+    let authToken = localStorage.getItem('acces_token');
+    console.log(authToken);
+
+    if(authToken == null) {
+      return false;
+    } else {
+      return true;
+    }
+
+   // return authToken !== null;
     }
 
   public getToken(): string {

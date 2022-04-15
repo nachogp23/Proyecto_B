@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/core/services/auth.service';
 import { HeroService } from 'src/app/core/services/hero.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     HeroService,
+    AuthService
   ],
   imports: [
     CommonModule,
