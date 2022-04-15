@@ -1,3 +1,5 @@
+import { HeroesListComponent } from './pages/heroes-list/heroes-list.component';
+import { HeroesRequestResolver } from './core/resolvers/heroes-request.resolver';
 import { AuthUserGuard } from './core/guards/auth-user.guard';
 import { ExitValidationGuard } from './core/guards/exit-validation.guard'
 import { RegisterModule } from './pages/register/register.module';
@@ -15,7 +17,7 @@ const routes: Routes = [
   {
     path: 'heroes-list',
     loadChildren: () => import('src/app/pages/heroes-list/heroes-list.module').then(m => m.HeroesListModule),
-
+    resolve: [HeroesRequestResolver]
   },
   {
     path: 'home',
@@ -63,6 +65,7 @@ const routes: Routes = [
   providers: [
     AuthUserGuard,
     ExitValidationGuard,
+    HeroesRequestResolver
   ]
 })
 export class AppRoutingModule { }

@@ -20,14 +20,13 @@ export class HeroesListComponent implements OnInit {
     private heroService: HeroService,
     private activatedRoute: ActivatedRoute,
   ) {
-    console.log('Me he construido');
-    console.log(this.activatedRoute.snapshot.data);
+    //console.log('Me he construido');
+    //console.log(this.activatedRoute.snapshot.data);
     this.heroes = this.activatedRoute.snapshot.data[0];
-    console.log(this.activatedRoute);
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    //this.getHeroes();
   }
 
   public modifyHeroes() {
