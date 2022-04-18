@@ -18,9 +18,23 @@
 </div>
 <div class="heroes-list">
   <app-hero
-    *ngFor="let hero of (heroes | filterHeroes: filterValue)"
+    *ngFor="let hero of (heroes | filterHeroes: filterValue  | slice:0:4)"
     [hero]="hero"
     [enableHeroEdit]="enableHeroEdit"
     (onDeleteHero)="deleteParentHero($event)"
   ></app-hero>
 </div>
+
+<button *ngIf="activateExpandBut" (click)="showMore()">Show more...</button>
+
+<div  *ngIf="expandList" class="heroes-list">
+  <app-hero
+    *ngFor="let hero of (heroes | filterHeroes: filterValue  | slice:3:20)"
+    [hero]="hero"
+    [enableHeroEdit]="enableHeroEdit"
+    (onDeleteHero)="deleteParentHero($event)"
+  ></app-hero>
+</div>
+
+<button *ngIf="activateConstrainBut" (click)="showLess()">Show Less...</button>
+

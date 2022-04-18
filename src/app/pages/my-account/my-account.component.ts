@@ -28,10 +28,13 @@ export class MyAccountComponent implements OnInit {
     const id = this.authService.getUserId();
     console.log(id);
     if (id) {
-      this.authService.getUserProfile(id).subscribe(user => console.log(user))
+      this.authService.getUserProfile(id).subscribe(user => {
+        this.user = user.result;
+      });
     }
 
-   }
+  }
+
 
   ngOnInit(): void {
   }

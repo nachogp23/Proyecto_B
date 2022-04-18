@@ -2,31 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../core/services/models/hero.models';
 import { HeroService } from 'src/app/core/services/hero.service';
 import { ActivatedRoute } from '@angular/router';
-//import { debounce } from 'rxjs';
 
 @Component({
   selector: 'app-heroes-list',
   templateUrl: './heroes-list.component.html',
-  styleUrls: ['./heroes-list.component.scss']
+  styleUrls: ['./heroes-list.component.scss'],
 })
 export class HeroesListComponent implements OnInit {
-
   public heroes: Hero[] = [];
   public enableHeroEdit: boolean = false;
   public filterValue: string = '';
   public heroesToShow: boolean = true;
+  public activateExpandBut: boolean = false;
+  public activateConstrainBut = false;
+  public expandList: boolean = false;
 
   constructor(
     private heroService: HeroService,
-    private activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute
   ) {
-    //console.log('Me he construido');
-    //console.log(this.activatedRoute.snapshot.data);
     this.heroes = this.activatedRoute.snapshot.data[0];
   }
 
   ngOnInit(): void {
-    //this.getHeroes();
+    if (this.heroes.length > 3) {
+      this.activateExpandBut = true;
+      console.log(this.activateExpandBut);
+    } else {
+      this.activateExpandBut = false;
+    }
   }
 
   public modifyHeroes() {
@@ -37,7 +41,6 @@ export class HeroesListComponent implements OnInit {
     this.heroService.deleteHero(id).subscribe((res) => {
       console.log(res);
       this.getHeroes();
-     // if (!this.heroes.length) {console.log("no heroes to show");}
     });
   }
 
@@ -45,13 +48,23 @@ export class HeroesListComponent implements OnInit {
     this.heroService.getHeroes().subscribe((heroes) => {
       console.log(heroes);
       this.heroes = heroes;
+
       if (!this.heroes.length) {
         this.heroesToShow = false;
-        //console.log("no heroes to show");
-        alert("NO HEROES TO SHOW");
+        alert('NO HEROES TO SHOW');
       }
-
     });
   }
 
+  public showMore() {
+    this.expandList = true;
+    this.activateExpandBut = false;
+    this.activateConstrainBut = true;
+  }
+
+  public showLess() {
+    this.expandList = false;
+    this.activateExpandBut = true;
+    this.activateConstrainBut = false;
+  }
 }
