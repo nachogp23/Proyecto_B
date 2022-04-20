@@ -19,13 +19,11 @@
       "rating": 5
     },
     {
-      "id": "3",
-      "hero": "HULK",
       "name": "Robert Bruce Banner",
-      "link": "http://marvel.com/characters/25/hulk",
+      "hero": "HULK",
+      "rating": "1",
       "img": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/006hbb_ons_crd_03.jpg",
-      "isActive": false,
-      "rating": 5
+      "id": "3"
     },
     {
       "id": "4",
@@ -64,7 +62,6 @@
       "rating": 5
     },
     {
-
       "id": "8",
       "hero": "THOR",
       "name": "Thor Odinson",
@@ -72,6 +69,13 @@
       "img": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/004tho_ons_crd_03.jpg",
       "isActive": false,
       "rating": 5
+    },
+    {
+      "name": "Nacho",
+      "hero": "Super-Nacho",
+      "rating": "1",
+      "img": "fed",
+      "id": "rliMahe"
     }
   ]
 }

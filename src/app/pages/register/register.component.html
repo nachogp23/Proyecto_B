@@ -1,46 +1,96 @@
-<div class="form container" *ngIf="signUpForm" >
+<div class="form-container" *ngIf="signUpForm" >
   <form [formGroup]="signUpForm"  (submit)="registerUser()">
-    <div>
-      <label>Name</label>
+    <div class="form-container__div">
+      <label class="form-container__div__label">Name</label>
       <input
         type="text"
-        class="form-control"
+        class="form-container__div__input"
         formControlName="name"
         placeholder="Enter your name"
         required
       >
     </div>
-    <div>
-      <label>Email</label>
+    <p
+      *ngIf="
+        !signUpForm.get('name')?.valid
+        && signUpForm.get('name')?.dirty
+        && signUpForm.get('name')?.errors?.['required']
+      "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+    <div class="form-container__div"
+>
+      <label class="form-container__div__label">Email</label>
       <input
         type="email"
-        class="form-control"
+        class="form-container__div__input"
         formControlName="email"
         placeholder="Enter your email address"
         required
       >
     </div>
-    <div>
-      <label>Password</label>
+    <p
+      *ngIf="
+        !signUpForm.get('email')?.valid
+        && signUpForm.get('email')?.dirty
+        && signUpForm.get('email')?.errors?.['required']
+      "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+    <p
+      *ngIf="
+        !signUpForm.get('email')?.valid
+        && signUpForm.get('email')?.dirty
+        && signUpForm.get('email')?.errors?.['email']
+      "
+      class="input-error"
+    >
+      Please, write valid email adress
+    </p>
+    <div class="form-container__div">
+      <label class="form-container__div__label">Password</label>
       <input
         type="password"
-        class="form-control"
+        class="form-container__div__input"
         formControlName="password"
         placeholder="Choose a password"
         required
       >
     </div>
-    <div>
-      <label>Emoji</label>
+    <p
+      *ngIf="
+        !signUpForm.get('password')?.valid
+        && signUpForm.get('password')?.dirty
+        && signUpForm.get('password')?.errors?.['required']
+      "
+      class="input-error"
+    >
+      Field requiered
+    </p>
+    <p
+      *ngIf="!signUpForm.get('password')?.valid
+      && signUpForm.get('password')?.dirty
+      && signUpForm.get('password')?.errors?.['minlength']"
+      class="input-error"
+    >
+      Passwors must be 4 charcters minimum
+    </p>
+
+    <div class="form-container__div">
+      <label class="form-container__div__label">Hero</label>
       <input
         type="text"
-        class="form-control"
-        formControlName="emoji"
-        placeholder="Choose one emoji"
+        class="form-container__div__input"
+        formControlName="hero"
+        placeholder="Choose your favorite hero"
         required
       >
     </div>
-    <button type="submit"> Sign Up </button>
+    <button class="form-container__button" type="submit" [disabled]="!signUpForm.valid"> Sign Up </button>
   </form>
 
 

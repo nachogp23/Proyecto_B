@@ -1,14 +1,62 @@
-<div class="form-container" *ngIf="signInForm">
-  <form [formGroup]="signInForm" (submit)="logInUser()">
-      <div>
-          <label>Email</label>
-          <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+<div class="signIn-page">
+  <div *ngIf="signInForm">
+    <form
+      class="form-container"
+      [formGroup]="signInForm"
+      (submit)="logInUser()"
+    >
+      <div class="form-container__div">
+        <label class="form-container__div__label">Email</label>
+        <input
+          type="email"
+          class="form-container__div__input"
+          formControlName="email"
+          placeholder="Enter email"
+          required
+        />
       </div>
-      <div>
-          <label>Password</label>
-          <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+      <p
+        *ngIf="
+          !signInForm.get('email')?.valid
+          && signInForm.get('email')?.dirty
+
+        "
+        class="input-error"
+      >
+        Field requiered
+      </p>
+      <div class="form-container__div">
+        <label class="form-container__div__label">Password</label>
+        <input
+          type="password"
+          class="form-container__div__input"
+          formControlName="password"
+          placeholder="Enter Password"
+        />
       </div>
-      <button type="submit">Sign in</button>
-  </form>
-  <p>{{ error }}</p>
+      <p
+        *ngIf="
+          !signInForm.get('password')?.valid && signInForm.get('password')?.dirty
+        "
+        class="input-error"
+      >
+        Field requiered
+      </p>
+      <button
+        class="form-container__button"
+        type="submit"
+        [disabled]="!signInForm.valid"
+      >
+        Sign in
+      </button>
+    </form>
+    <p class="error-text">{{ error }}</p>
+  </div>
+
+  <div class="signUp-container">
+    <p class="signUp-container__text">Don't have an account?</p>
+    <button class="signUp-container__button" (click)="toSignUpPage()">
+      Sign Up
+    </button>
+  </div>
 </div>

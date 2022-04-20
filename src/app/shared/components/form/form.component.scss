@@ -1,29 +1,42 @@
 .form {
-  margin-top: 40px;
+  height: 51vh;
+  margin-top: 0px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
+  padding-top: 1%;
+  padding-bottom: 5%;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 24px;
+  background-color: rgb(192, 192, 192);
+
+  &__title {
+    margin-top: 1%;
+    text-transform: uppercase;
+  }
 
   &__input {
       padding: 4px;
       height: 24px;
-      border: 1px solid grey;
-      border-radius: 5px;
-      width: 100%;
+      border: 3px solid rgba(191, 0, 0, 0.807);
+      border-radius: 10px;
+      font-size: 20px;
+      //width: 100%;
   }
 
   &__select {
       height: 32px;
       width: 100%;
+      border: 3px solid rgba(191, 0, 0, 0.807);
+      border-radius: 10px
   }
 
   &__button {
       display: block;
+      margin-top: 2%;
       padding: 8px 12px;
       width: 160px;
       border-radius: 25px;
@@ -31,7 +44,9 @@
       color: white;
       background-color: rgb(0, 138, 32);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
+      font-size: 25px;
+      align-self: center;
+      justify-self: center;
       cursor:pointer;
 
       &:hover:not(:disabled) {
@@ -48,8 +63,11 @@
 .field-container {
   display: block;
   flex: 45%;
-  margin-bottom: 32px;
-  margin-right: 30px;
+  margin-bottom: 15px;
+  //margin-right: 30px;
+  align-self: center;
+  justify-self: center;
+
 }
 
 .input-error {
@@ -63,4 +81,17 @@
 .products {
   display: flex;
   flex-wrap: wrap;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+  }
 }

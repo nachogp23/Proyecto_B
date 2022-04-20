@@ -4,8 +4,12 @@
   (submit)="saveHero($event)"
   class="form"
 >
+  <div class="form__title">
+    <h2>{{ hero ? "Edit hero" : "Create your own hero" }}</h2>
+  </div>
+
   <div class="field-container">
-    <input class="form_input" placeholder="Name" formControlName="name" />
+    <input class="form__input" placeholder="Real Name" formControlName="name" />
     <p
       *ngIf="
         !createHeroForm.get('name')?.valid && createHeroForm.get('name')?.dirty
@@ -18,7 +22,7 @@
 
   <div class="field-container">
     <input
-      class="form_input"
+      class="form__input"
       placeholder="Hero's Name"
       formControlName="hero"
     />
@@ -33,11 +37,23 @@
   </div>
 
   <div class="field-container">
-    <input
-      class="form_input"
-      placeholder="Hero's Rating"
+    <!-- <input
+      class="form__input"
+      placeholder="Hero's Rating (1-5)"
       formControlName="rating"
-    />
+    /> -->
+    <div class="rating-container">
+      <span class="rating-container__span">Hero's rating</span>
+      <select class="form__select" formControlName="rating">
+        <option disabled selected="selected">Choose hero's rating</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
     <p
       *ngIf="!createHeroForm.get('rating')?.valid
      && createHeroForm.get('rating')?.dirty
@@ -56,11 +72,10 @@
     </p>
   </div>
 
-
   <div class="field-container">
     <input
-      class="form_input"
-      placeholder="Hero's Image"
+      class="form__input"
+      placeholder="Hero's Image URL"
       formControlName="img"
     />
     <p

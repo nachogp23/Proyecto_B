@@ -13,7 +13,7 @@ let userSchema = new Schema({
     password: {
         type: String
     },
-    emoji: {
+    hero: {
         type: String
     }
 }, {

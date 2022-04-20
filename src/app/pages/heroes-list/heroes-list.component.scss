@@ -7,7 +7,7 @@
   //justify-content: center;
   font-weight: medium;
   //justify-items: center;
-  //background-color: black;
+  background-color: rgb(192, 192, 192);
 
   &__title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -61,6 +61,33 @@
  // justify-content: center;
   background-color: rgb(25, 25, 25);
 
+  &__showBtn {
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    &--btn {
+      background-color: rgb(252, 235, 0);
+      width: auto;
+      height: 50%;
+      border-radius: 10%;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 20px;
+
+      &:hover {
+        box-shadow: 6px 6px 6px  rgba(51, 107, 176, 0.486);
+        opacity: 0.9;
+        color: rgb(2, 88, 201);
+        cursor: pointer;
+
+      }
+      //color: yellow;
+    }
+
+  }
+
 }
 
 .filter__input {
@@ -77,5 +104,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: rgb(192, 192, 192);
   //justify-content: center;
 }

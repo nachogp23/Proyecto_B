@@ -32,7 +32,7 @@ router.post("/register-user", [
                     name: req.body.name,
                     email: req.body.email,
                     password: hash,
-                    emoji: req.body.emoji
+                    hero: req.body.hero
                 });
                 user.save().then((response) => {
                     res.status(201).json({

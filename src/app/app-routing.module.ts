@@ -1,7 +1,6 @@
 import { HeroesListComponent } from './pages/heroes-list/heroes-list.component';
 import { HeroesRequestResolver } from './core/resolvers/heroes-request.resolver';
 import { AuthUserGuard } from './core/guards/auth-user.guard';
-import { ExitValidationGuard } from './core/guards/exit-validation.guard'
 import { RegisterModule } from './pages/register/register.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { NgModule } from '@angular/core';
@@ -27,12 +26,13 @@ const routes: Routes = [
   {
     path: 'create-hero',
     loadChildren: () => import('src/app/pages/heroes-form/heroes-form.module').then(m => m.HeroesFormModule),
-    canDeactivate: [ExitValidationGuard]
+    canActivate: [AuthUserGuard]
 
   },
   {
     path: 'edit-form/:id',
-    loadChildren: () => import('src/app/pages/edit-hero/edit-hero.module').then(m => m.EditHeroModule)
+    loadChildren: () => import('src/app/pages/edit-hero/edit-hero.module').then(m => m.EditHeroModule),
+    canActivate: [AuthUserGuard]
   },
   {
     path: 'register',
@@ -64,7 +64,6 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [
     AuthUserGuard,
-    ExitValidationGuard,
     HeroesRequestResolver
   ]
 })

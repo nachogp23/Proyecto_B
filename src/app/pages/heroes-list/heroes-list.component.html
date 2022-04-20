@@ -1,40 +1,44 @@
 <div class="heroes-header">
   <p class="heroes-header__title">Marvel's Heroes List</p>
-
 </div>
 <div class="heroes-subHeader">
-  <input class="filter__input" [(ngModel)]="filterValue" placeholder="Hero to search">
+  <input
+    class="filter__input"
+    [(ngModel)]="filterValue"
+    placeholder="Hero to search"
+  />
   <button (click)="modifyHeroes()" class="heroes-header__modify">
     {{ enableHeroEdit ? "STOP EDITNG" : "MODIFY" }}
   </button>
-
 </div>
 
-<div *ngIf="!heroesToShow" class="heroes-header__emptyList" >
-  <p>
-    No heroes to show
-  </p>
-
+<div *ngIf="!heroesToShow" class="heroes-header__emptyList">
+  <p>No heroes to show</p>
 </div>
 <div class="heroes-list">
   <app-hero
-    *ngFor="let hero of (heroes | filterHeroes: filterValue  | slice:0:4)"
+    *ngFor="let hero of heroes | filterHeroes: filterValue | slice: 0:4"
     [hero]="hero"
     [enableHeroEdit]="enableHeroEdit"
     (onDeleteHero)="deleteParentHero($event)"
   ></app-hero>
 </div>
 
-<button *ngIf="activateExpandBut" (click)="showMore()">Show more...</button>
+<div *ngIf="activateExpandBut" class="heroes-list__showBtn">
+  <button  class="heroes-list__showBtn--btn" (click)="showMore()">Show more...</button>
+</div>
 
-<div  *ngIf="expandList" class="heroes-list">
+<div *ngIf="expandList" class="heroes-list">
   <app-hero
-    *ngFor="let hero of (heroes | filterHeroes: filterValue  | slice:3:20)"
+    *ngFor="let hero of heroes | filterHeroes: filterValue | slice: 3:20"
     [hero]="hero"
     [enableHeroEdit]="enableHeroEdit"
     (onDeleteHero)="deleteParentHero($event)"
   ></app-hero>
 </div>
 
-<button *ngIf="activateConstrainBut" (click)="showLess()">Show Less...</button>
-
+<div *ngIf="activateConstrainBut" class="heroes-list__showBtn">
+  <button class="heroes-list__showBtn--btn" (click)="showLess()">
+    Show Less...
+  </button>
+</div>

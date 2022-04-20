@@ -1,0 +1,107 @@
+.form-container {
+  height: 442px;
+  width: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: rgb(192, 192, 192);
+
+  &__div {
+    width: 400px;
+    margin: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__input {
+      margin-left: 10px;
+      padding: 4px;
+      height: 24px;
+      border: 3px solid rgb(20, 98, 207);
+      border-radius: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &__button {
+    margin-top: 2%;
+    display: block;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 12px;
+    width: 160px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: rgb(20, 98, 207);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      opacity: 0.7;
+    }
+
+    &:disabled {
+      background-color: rgba(135, 134, 134, 0.797);
+      cursor: no-drop;
+    }
+  }
+}
+
+.error-text {
+  margin: 0%;
+  font-size: 24px;
+  background-color: rgb(192, 192, 192);
+}
+.input-error {
+  color: rgb(185, 62, 62);
+  font-weight: bold;
+  margin-top: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signUp-container {
+  margin: 0%;
+  font-size: 24px;
+  background-color: rgb(192, 192, 192);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  &__text {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  &__button {
+    padding: 8px 12px;
+    width: 160px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: rgb(20, 98, 207);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      opacity: 0.7;
+    }
+  }
+}

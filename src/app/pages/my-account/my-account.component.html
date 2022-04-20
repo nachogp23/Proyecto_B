@@ -1,7 +1,22 @@
-<div>
-  <h2>User Profile</h2>
-  <p><span>Name: </span> {{this.user?.name}}</p>
-  <p><span>Email: </span> {{this.user?.email}}</p>
-  <p><span>Emoji: </span> {{this.user?.emoji}}</p>
-</div>
-<button (click)="logout()" > Logout! </button>
+<section class="my-account">
+  <div class="my-account__container">
+    <h2 class="my-account__container__title">User Profile</h2>
+    <div class="my-account__container__userInfo">
+      <p class="my-account__container__userInfo__text">
+        <span class="my-account__container__userInfo__text--span">Name: </span>
+        {{ this.user?.name }}
+      </p>
+      <p class="my-account__container__userInfo__text">
+        <span class="my-account__container__userInfo__text--span">Email: </span>
+        {{ this.user?.email }}
+      </p>
+      <p class="my-account__container__userInfo__text">
+        <span class="my-account__container__userInfo__text--span">Hero: </span>
+        {{ this.user?.hero }}
+      </p>
+    </div>
+  </div>
+  <button class="my-account__button" (click)="logout()">
+    Logout!
+  </button>
+</section>
