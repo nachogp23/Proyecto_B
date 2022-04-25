@@ -18,7 +18,14 @@
   <flip-card-back>
     <p class="hero__el--back--title">{{ hero.hero }}</p>
     <p class="hero__el--back"><span>Real name: </span>{{ hero.name }}</p>
-    <p class="hero__el--back"><span>Rating: </span> {{ hero.rating }}⭐</p>
+    <!-- <p class="hero__el--back"><span>Rating: </span> {{ hero.rating }}⭐</p> -->
+    <p class="hero__el--back">Rating:
+      <span *ngIf="hero.rating == 1">⭐</span>
+      <span *ngIf="hero.rating == 2">⭐⭐</span>
+      <span *ngIf="hero.rating == 3">⭐⭐⭐</span>
+      <span *ngIf="hero.rating == 4">⭐⭐⭐⭐</span>
+      <span *ngIf="hero.rating == 5">⭐⭐⭐⭐⭐</span>
+    </p>
     <div class="hero__buttons" *ngIf="enableHeroEdit">
       <button class="hero__button hero__button--delete" (click)="deleteHero()">
         DELETE

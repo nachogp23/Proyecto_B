@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { delayWhen } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
-
+import { LoadingService } from 'src/app/core/services/loading.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public authService: AuthService,
-    public router: Router
+    public router: Router,
+    public loading: LoadingService
   ) {
     this.signUpForm = this.fb.group({
       name: ['', Validators.required],
@@ -38,6 +39,7 @@ export class RegisterComponent implements OnInit {
       //   next: (res) => console.log(res),
       //   error: (err) => this.error = err.error.message,
       //   });
+      this.loading.stopLoading();
       this.router.navigate(['/home']);
     }
   }

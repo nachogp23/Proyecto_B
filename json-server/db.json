@@ -20,8 +20,8 @@
     },
     {
       "name": "Robert Bruce Banner",
-      "hero": "HULK",
-      "rating": "1",
+      "hero": "HULKA",
+      "rating": "4",
       "img": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/006hbb_ons_crd_03.jpg",
       "id": "3"
     },
@@ -71,11 +71,11 @@
       "rating": 5
     },
     {
-      "name": "Nacho",
-      "hero": "Super-Nacho",
+      "name": "da",
+      "hero": "adw",
       "rating": "1",
-      "img": "fed",
-      "id": "rliMahe"
+      "img": "https://media.revistagq.com/photos/5eaa92505a16590008bff7c4/master/pass/superman.jpg",
+      "id": "29q-qpe"
     }
   ]
 }
