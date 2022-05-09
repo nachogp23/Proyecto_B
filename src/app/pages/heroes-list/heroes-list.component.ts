@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DebugElement, OnInit } from '@angular/core';
 import { Hero } from '../../core/services/models/hero.models';
 import { HeroService } from 'src/app/core/services/hero.service';
 import { ActivatedRoute } from '@angular/router';
@@ -22,6 +22,8 @@ export class HeroesListComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     this.heroes = this.activatedRoute.snapshot.data[0];
+    console.log(this.heroes);
+
   }
 
   ngOnInit(): void {

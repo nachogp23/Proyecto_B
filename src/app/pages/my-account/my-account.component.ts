@@ -26,7 +26,6 @@ export class MyAccountComponent implements OnInit {
     //   }
     // })
     const id = this.authService.getUserId();
-    console.log(id);
     if (id) {
       this.authService.getUserProfile(id).subscribe(user => {
         this.user = user.result;
@@ -35,13 +34,11 @@ export class MyAccountComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
   }
 
   public logout() {
     this.authService.logout();
-    console.log("Saliendo...");
   }
 
 }

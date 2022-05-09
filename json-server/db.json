@@ -19,11 +19,13 @@
       "rating": 5
     },
     {
+      "id": "3",
+      "hero": "HULK",
       "name": "Robert Bruce Banner",
-      "hero": "HULKA",
-      "rating": "4",
+      "link": "http://marvel.com/characters/25/hulk",
       "img": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/006hbb_ons_crd_03.jpg",
-      "id": "3"
+      "isActive": false,
+      "rating": 5
     },
     {
       "id": "4",
@@ -62,6 +64,7 @@
       "rating": 5
     },
     {
+
       "id": "8",
       "hero": "THOR",
       "name": "Thor Odinson",
@@ -69,13 +72,7 @@
       "img": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/004tho_ons_crd_03.jpg",
       "isActive": false,
       "rating": 5
-    },
-    {
-      "name": "da",
-      "hero": "adw",
-      "rating": "1",
-      "img": "https://media.revistagq.com/photos/5eaa92505a16590008bff7c4/master/pass/superman.jpg",
-      "id": "29q-qpe"
     }
+
   ]
 }

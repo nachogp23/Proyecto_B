@@ -1,5 +1,7 @@
+//Require JWT
 const jwt = require("jsonwebtoken");
 
+//Export method to verify user token provided in the request
 module.exports = (req, res, next) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
